@@ -1,42 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+}
+body {
+  background-color: rgb(170, 194, 184);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.todo-container {
+  background-color: #ece7e2;
+  padding: 1rem 10rem 3rem 10rem;
+  border-radius: 10px;
+  min-width: 500px;
+  box-shadow: 0px 0px 27px -7px rgba(0, 0, 0, 0.75);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  font-size: 3em;
+  font-family: "Caveat", cursive;
+  margin: 1rem;
+}
+
+form {
+  display: flex;
+}
+input {
+  padding: 0.5rem 1rem;
+}
+
+ul {
+  margin: 1rem 0;
+  font-size: 20px;
+  padding: 0;
+}
+
+.buttons {
+  display: flex;
+}
+.buttons button {
+  padding: 0.2rem 0.5rem;
+  font-size: 13px;
+  margin: 0.2rem;
+}
+
+.remove-all-btn {
+  background-color: rgb(221, 190, 201);
+}
+
+.mark-all-done-btn {
+  background-color: #f7d0a2;
+}
+
+.mark-all-done-btn:hover,
+.done-btn:hover {
+  box-shadow: 0px 0px 25px 13px rgba(255, 238, 207, 1);
+}
+
+.done-btn {
+  background-color: #f7d0a2;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-text {
+  flex-grow: 1;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+@media (max-width: 600px) {
+  .todo-container {
+    min-width: 100px;
+    padding: 1rem 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
