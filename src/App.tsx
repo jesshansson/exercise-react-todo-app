@@ -1,9 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 
+interface Todo {
+  text: string;
+  isDone: boolean;
+}
+
 function App() {
   const [todo, setTodo] = useState<string>(""); //The input field
-  const [todoList, setTodoList] = useState<{ text: string; isDone: boolean }[]>([
+  const [todoList, setTodoList] = useState<Todo[]>([
     { text: "Buy cat food", isDone: false },
     { text: "Buy cat", isDone: false },
   ]); // The list of to-dos
@@ -41,16 +46,19 @@ function App() {
     setTodoList(newTodoList);
   };
 
+  const todosLeft = todoList.filter((todo) => !todo.isDone).length; //Creates a new array only containing tasks done, "length" gives the amount
+
   return (
     <>
-      <section className="todo-container">
+      <main className="todo-container">
         <h1>To-do list</h1>
+        <p className="todo-counter">Tasks to do: {todosLeft}</p>
         <form onSubmit={handleSubmit}>
           <input
             onChange={(event) => {
               setTodo(event.target.value);
             }}
-            value={todo} // Connecting the input to todo-state
+            value={todo}
             type="text"
             className="todo-input"
             placeholder="Add to-do"
@@ -66,7 +74,7 @@ function App() {
         <ul>
           {todoList.map((todo, i) => (
             <li key={i} className="todo-item">
-              <span className={todo.isDone ? "todo-text done" : "todo-text"}>{todo.text}</span>{" "}
+              <span className={todo.isDone ? "todo-text done" : "todo-text"}>{todo.text}</span>
               <div className="buttons">
                 <button className="done-btn" onClick={() => markAsDone(i)}>
                   Done
@@ -78,7 +86,7 @@ function App() {
             </li>
           ))}
         </ul>
-      </section>
+      </main>
     </>
   );
 }
