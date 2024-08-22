@@ -97,6 +97,17 @@ ul {
   }
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+
+  img {
+    width: 20rem;
+    border-radius: 5px;
+  }
+}
+
 @media (max-width: 600px) {
   .todo-container {
     min-width: 100px;
@@ -120,5 +131,9 @@ ul {
       border: 0;
       margin: 0.5rem 0;
     }
+  }
+
+  img {
+    width: 15rem;
   }
 }
