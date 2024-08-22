@@ -17,7 +17,7 @@ function App() {
     event.preventDefault();
     if (todo.trim() !== "") {
       //Controlling if the input field is empty ("trim" removes extra blank spaces)
-      setTodoList([...todoList, { text: todo, isDone: false }]); // Creates a new array includning old to-tos "(...todoList)" and the new added. All initially marked as not done. setTodoList updates the todoList with the new todo.
+      setTodoList([...todoList, { text: todo, isDone: false }]); // Creates a new array includning old to-dos "(...todoList)" and the new added. All initially marked as not done. setTodoList updates the todoList with the new todo.
       setTodo(""); // Clear the input field
     }
   };
