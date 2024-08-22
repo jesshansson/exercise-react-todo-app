@@ -77,7 +77,7 @@ function App() {
         {/* Conditional rendering: visa en bild om todoList är tom */}
         {todoList.length === 0 ? (
           <div className="img-container">
-            <img src="src\assets\willywonka.jpg" alt="Waiting for new todo" />
+            <img src="../public/willywonka.jpg" alt="Waiting for new todo" />
           </div>
         ) : (
           <ul>
