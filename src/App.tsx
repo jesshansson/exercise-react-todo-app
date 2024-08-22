@@ -63,7 +63,9 @@ function App() {
             className="todo-input"
             placeholder="Add to-do"
           />
-          <button type="submit">Add</button>
+          <button className="add-btn" type="submit">
+            Add
+          </button>
           <button className="mark-all-done-btn" onClick={markAllDone}>
             Mark All Done
           </button>
