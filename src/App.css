@@ -61,6 +61,12 @@ ul {
   }
 }
 
+.todo-text {
+  &::before {
+    content: "• ";
+  }
+}
+
 .remove-all-btn {
   background-color: rgb(221, 190, 201);
 }
@@ -74,11 +80,8 @@ ul {
   box-shadow: 0px 0px 25px 13px rgba(255, 238, 207, 1);
 }
 
+.done-btn,
 .add-btn {
-  background-color: #f7d0a2;
-}
-
-.done-btn {
   background-color: #b2e0c1;
 }
 
